@@ -1,1 +1,4 @@
-React Welcome Project with Login
+Setup:
+    Clone repo
+    npm i
+    npm start
