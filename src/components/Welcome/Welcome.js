@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import FacebookLogin from 'react-facebook-login';
-import GoogleLogin from 'react-google-login';
 import {PostData} from '../../services/PostData';
 import {Redirect} from 'react-router-dom';
 import './Welcome.css';
@@ -30,17 +29,6 @@ class Welcome extends Component {
       };
     }
 
-    if (type === 'google' && res.w3.U3) {
-      postData = {
-        name: res.w3.ig,
-        provider: type,
-        email: res.w3.U3,
-        provider_id: res.El,
-        token: res.Zi.access_token,
-        provider_pic: res.w3.Paa
-      };
-    }
-
     if (postData) {
       PostData('signup', postData).then((result) => {
         let responseJson = result;
@@ -62,27 +50,15 @@ class Welcome extends Component {
       this.signup(response, 'facebook');
     }
 
-    const responseGoogle = (response) => {
-      console.log("google console");
-      console.log(response);
-      this.signup(response, 'google');
-    }
-
     return (
 
       <div>
             <FacebookLogin
-              appId="517280548623431"
+              appId="151917181683965"
               autoLoad={false}
               fields="name,email,picture"
               callback={responseFacebook}/>
             <br/><br/>
-
-            <GoogleLogin
-              clientId="1094067897150-86v77idjftcv24mhrnb48sjubdujc4d0.apps.googleusercontent.com"
-              buttonText="Login with Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}/>
 
       </div>
     );
