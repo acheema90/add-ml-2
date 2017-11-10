@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      appName: "Login with Facebook and Google using ReactJS and RESTful APIs",
+      appName: "Login with Facebook using ReactJS and RESTful APIs",
       home: false
     }
   }
